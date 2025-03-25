@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html lang="pls">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Eventify</title>
-</head>
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/basics.css">
+    <script src="js/import.js" defer></script>
+    <script src="js/loadModule.js" defer></script>
+</head>     
 <body>
+
+    <div id="sidebar"></div>
+
     <div class="container">
         <div class="main-content">
-            HELLO WORLD!!
+            
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            loadImports("UI/sidebar/imports.html");
+            loadModule("UI/sidebar/sidebar.html", "sidebar")
+        });
+    </script>
+
 </body>
 </html>
