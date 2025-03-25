@@ -8,6 +8,7 @@ module.exports = (config) => {
     // Function to authenticate token for verifing token
     function authenticateToken(req, res, next) {
         const token = req.cookies.token
+        if (!token) return res.status(401).json({ 'message': 'Token missing' })
     }
 
     // Register path to create a new user
