@@ -17,10 +17,8 @@ const config = {
 
 // Connect to MongoDB database
 mongoose.connect(config.MONGODB_URI)
-const db = mongoose.connection
-db.on('error', (err) => console.error(`Error: ${err}`))
-db.on('connect', () => console.error(`Connected to MongoDB`))
-db.on('disconnect', () => console.error(`Disconnected from MongoDB`))
+.then(() => console.log("Connected to MongoDB"))
+.catch((err) => console.error("Connection error: ", err))
 
 // Attach JSON parser and CORS handler to application
 app.use(express.json())
