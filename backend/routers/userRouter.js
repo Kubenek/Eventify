@@ -16,6 +16,17 @@ module.exports = (config = null) => {
             res.status(500).json({ 'message': 'Internal server error' })
         }
     })
+
+    router.post('/login', async (req, res) => {
+        try {
+            const { username, password } = req.body
+            if (!username || !password) return res.status(404).json({ 'message': 'Username, email or password not present' })
+
+            
+        } catch (err) {
+            res.status(500).json({ 'message': 'Internal server error' })
+        }
+    })
     
     return router
 }
