@@ -13,7 +13,8 @@ const app = express()
 // Config variable for all backend app
 const config = {
     PORT: process.env.PORT || 3000, // Set port, default to 3000 if not provided
-    MONGODB_URI: process.env.MONGODB_URI // MongoDB URI for connection
+    MONGODB_URI: process.env.MONGODB_URI, // MongoDB URI for connection
+    JWT_SECRET: process.env.JWT_SECRET // JWT Secret key for security
 }
 
 // Connect to MongoDB database
