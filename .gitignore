@@ -5,3 +5,5 @@ venv/
 cache/
 local/
 *.local
+env
+.env
