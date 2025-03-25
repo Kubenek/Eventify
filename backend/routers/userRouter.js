@@ -48,7 +48,11 @@ module.exports = (config) => {
                 res.status(401).json({ 'message': 'Wrong password' })
             }
 
-            res.status
+            const token = jwt.sign({ username: username }, config.JWT_SECRET, { expiresIn: '1h' })
+            res.cookie('token', token, {
+                maxAge: 3600000 // 1 hour
+            })
+            res.json({ 'message': 'Login succesful', token })
         } catch (err) {
             res.status(500).json({ 'message': 'Internal server error' })
         }
