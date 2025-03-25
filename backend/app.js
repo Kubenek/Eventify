@@ -11,6 +11,12 @@ const config = {
     MONGODB_URI: process.env.MONGODB_URI
 }
 
+app.use(express.json())
+app.use(cors({
+    origin: ["*"], // temporary
+    credentials: true
+}))
+
 app.listen(config.PORT, () => {
     console.log(`Server running at http://localhost:${config.PORT}`)
 })
