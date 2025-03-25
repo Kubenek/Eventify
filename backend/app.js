@@ -5,6 +5,7 @@ require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
+const cookieParser = require('cookie-parser')
 
 // Create an app
 const app = express()
@@ -22,6 +23,7 @@ mongoose.connect(config.MONGODB_URI)
 
 // Attach JSON parser and CORS handler to application
 app.use(express.json()) // Parse incoming JSON requests
+app.use(cookieParser) // Parse incoming cookies
 app.use(cors({ 
     origin: ["*"], // Temporary allow all origins
     credentials: true // Allow credentials in CORS requests
